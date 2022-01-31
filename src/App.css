@@ -3,6 +3,7 @@
     display: flex;
     background-color: #020230;
     color: #fff;
+    overflow-x: hidden;
 }
 
 .main{
@@ -205,6 +206,10 @@
     direction: rtl;
 }
 
+.isPerisan_mobile{
+    display: none;
+}
+
 @media screen and (max-width:768px) {
     .app{
         flex-direction: column;
@@ -232,7 +237,7 @@
 
     .timer{
         top: 20px;
-        left: 290px;
+        left: 310px;
         color: #000;
         border: 5px solid #000;
         width: 65px;
@@ -247,5 +252,23 @@
     .tryAgin_btn{
         width: 280px;
         font-size: 20px;
+    }
+
+    .isPerisan_mobile{
+        display: block;
+        width: 60px;
+        position: absolute;
+        /* right: 400px; */
+        top: 2px;
+        left: 2px;
+        font-size: 16px;
+        padding: 2px;
+        background-color: rgb(44, 57, 233);
+        color: white;
+        border: 1px solid white;
+        outline: none;
+        cursor: pointer;
+        z-index: 15;
+        direction: rtl;
     }
 }

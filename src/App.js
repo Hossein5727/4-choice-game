@@ -18,7 +18,10 @@ function App() {
     <div className='app'>
       <main className='main'>
         {!isPersian && (
-          <button className='isPerisan' onClick={() => setIsPersian(true)}>اگه میخوای زبون مسابقه فارسی بشه بمال روم😉</button>
+          <>
+            <button className='isPerisan' onClick={() => setIsPersian(true)}>اگه میخوای زبون مسابقه فارسی بشه بمال روم😉</button>
+            <button className='isPerisan_mobile' onClick={() => setIsPersian(true)}>فارسی بشه؟؟</button>
+          </>
         )}
         {!stop ? (
           <>
