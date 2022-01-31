@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+.app{
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+    flex: 2.5;
+    background: linear-gradient(to bottom ,rgba(0,0,0,0),#020230),
+     url(./assets/bg.jpg) center;
+     display: flex;
+     flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.top{
+    flex: 1;
+    position: relative;
+}
+
+.timer{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 3rem;
+    left: 70px;
+}
+
+.bottom{
+    flex: 1;
+}
+
+.pyramid{
+    flex: 1;
+}
+
+.pyramidItem{
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.4s all ease-in-out;
+}
+
+.active{
+    background-color: teal;
+    transition: 0.4s all ease-in-out;
+}
+
+.pyramidItemId{
+    width:14%;
+    margin-left: 20px;
+}
+
+.trivia{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.questions_trivia{
+    width: 100%;
+}
+
+.questions_trivia h2{
+    font-weight: 500;
+    font-size: 42px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 12px #3355CE, 3px 3px 0px rgba(78,206,191,0.23);
+    background-color: rgba(179, 171, 171, 0.404);
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.asnwers_tivia{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    font-size: 22px;
+    width: 80%;
+}
+
+.asnwer{
+    padding: 10px 18px;
+    margin: 10px;
+    background-color: #0284c7;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #0c4a6e;
+    transition: 0.1s all;
+}
+
+.asnwer:hover{
+    background-color: #1e3a8a;
+}
+
+.active_answer{
+    background-color: #1e3a8a !important;
+}
+
+
+
+.correct_answer {
+    animation: correct 3s ease forwards;
+}
+  
+@keyframes correct  {
+    0%,
+    22%,
+    42% {
+        background: mediumblue ;
+    }
+    20%,
+    40%,
+    60% {
+        background:  linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+        background: green ;
+    }
+}
+  
+.wrong {
+    animation: wrong 3s ease forwards;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @keyframes wrong {
+    0%,
+    22%,
+    42% {
+      background: mediumblue ;
+    }
+    20%,
+    40%,
+    60% {
+      background: linear-gradient(#0e0124, #22074d) ;
+    }
+    62%,
+    100% {
+      background: crimson ;
+    }
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.end_game{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(26, 80, 197, 0.521);
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tryAgin_btn{
+    margin-top: 30px;
+    width: 350px;
+    padding: 10px 30px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0284c7;
+    transition: 0.3s all ease-in-out;
+}
+
+.tryAgin_btn:hover{
+    background-color: #013752;
+    color: #fff;
+}
+
+.isPerisan{
+    width: 640px;
+    position: absolute;
+    right: 450px;
+    top: 30px;
+    font-size: 35px;
+    padding: 5px;
+    background-color: rgba(44, 56, 233, 0.466);
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    cursor: pointer;
+    z-index: 5;
+    direction: rtl;
+}
+
+@media screen and (max-width:768px) {
+    .app{
+        flex-direction: column;
+        height: 100%;
+        
+    }
+    .pyramid{
+        margin-top: 30px;
+    }
+
+    .questions_trivia h2{
+        font-size: 30px;
+    }
+
+    .asnwers_tivia{
+        width: 100%;
+        font-size: 18px;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .timer{
+        top: 20px;
+        left: 280px;
+        color: #000;
+        border: 5px solid #000;
+        width: 65px;
+        height: 65px;
+    }
 }

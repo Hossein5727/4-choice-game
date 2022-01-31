@@ -1,23 +1,63 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import EndGame from './components/EndGame';
+import Timer from './components/Timer';
+import Trivia from './components/Trivia';
+import { moneyPyramid } from './data/pyramidData';
+import { questionDataPersian } from './data/questionDataPersian';
+import { questionsData } from './data/questionsData';
 
 function App() {
+
+  const [questionNumber, setQuestionNumber] = useState(1)
+  const [stop, setStop] = useState(false)
+  const [isPersian, setIsPersian] = useState(false)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <main className='main'>
+        {!isPersian && (
+          <button className='isPerisan' onClick={() => setIsPersian(true)}>اگه میخوای زبون مسابقه فارسی بشه بمال روم😉</button>
+        )}
+        {!stop ? (
+          <>
+            <div className='top'>
+              <div className='timer'>
+                <Timer
+                  setStop={setStop}
+                  questionNumber={questionNumber}
+                />
+              </div>
+            </div>
+            <div className='bottom'>
+              <Trivia
+                setStop={setStop}
+                questionNumber={questionNumber}
+                setQuestionNumber={setQuestionNumber}
+                data={questionsData}
+                persianData={questionDataPersian}
+                isPersian={isPersian}
+              />
+            </div>
+          </>
+        ) : (
+          <EndGame
+            setQuestionNumber={setQuestionNumber}
+            setStop={setStop}
+          />
+        )}
+      </main>
+
+      <div className='pyramid'>
+        {moneyPyramid.map(item => (
+          <div key={item.id} className={questionNumber === item.id ? "pyramidItem active" : "pyramidItem"}>
+            <p className='pyramidItemId'>{item.id}</p>
+            <p>{item.amount}</p>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
