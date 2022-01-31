@@ -215,8 +215,13 @@
         margin-top: 30px;
     }
 
+    .questions_trivia{
+        width: 100%;
+    }
+    
     .questions_trivia h2{
-        font-size: 30px;
+        font-size: 28px;
+        width: 100%;
     }
 
     .asnwers_tivia{
@@ -227,10 +232,20 @@
 
     .timer{
         top: 20px;
-        left: 280px;
+        left: 290px;
         color: #000;
         border: 5px solid #000;
         width: 65px;
         height: 65px;
+    }
+
+    .end_game{
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .tryAgin_btn{
+        width: 280px;
+        font-size: 20px;
     }
 }
