@@ -210,6 +210,15 @@
     display: none;
 }
 
+.win{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+
 @media screen and (max-width:768px) {
     .app{
         flex-direction: column;

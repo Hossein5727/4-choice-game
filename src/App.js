@@ -9,15 +9,16 @@ import { questionsData } from './data/questionsData';
 
 function App() {
 
-  const [questionNumber, setQuestionNumber] = useState(1)
+  const [questionNumber, setQuestionNumber] = useState(6)
   const [stop, setStop] = useState(false)
   const [isPersian, setIsPersian] = useState(false)
 
+  console.log(questionNumber);
 
   return (
     <div className='app'>
       <main className='main'>
-        {!isPersian && (
+        {!isPersian && questionNumber <= questionsData.length && (
           <>
             <button className='isPerisan' onClick={() => setIsPersian(true)}>اگه میخوای زبون مسابقه فارسی بشه بمال روم😉</button>
             <button className='isPerisan_mobile' onClick={() => setIsPersian(true)}>فارسی بشه؟؟</button>
@@ -26,12 +27,14 @@ function App() {
         {!stop ? (
           <>
             <div className='top'>
-              <div className='timer'>
-                <Timer
-                  setStop={setStop}
-                  questionNumber={questionNumber}
-                />
-              </div>
+              {questionNumber <= questionsData.length && (
+                <div className='timer'>
+                  <Timer
+                    setStop={setStop}
+                    questionNumber={questionNumber}
+                  />
+                </div>
+              )}
             </div>
             <div className='bottom'>
               <Trivia
@@ -50,6 +53,7 @@ function App() {
             setStop={setStop}
           />
         )}
+        {questionNumber > questionsData.length && (<h1 className='win'>You Win👍</h1>)}
       </main>
 
       <div className='pyramid'>
