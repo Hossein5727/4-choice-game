@@ -9,7 +9,7 @@ import { questionsData } from './data/questionsData';
 
 function App() {
 
-  const [questionNumber, setQuestionNumber] = useState(6)
+  const [questionNumber, setQuestionNumber] = useState(1)
   const [stop, setStop] = useState(false)
   const [isPersian, setIsPersian] = useState(false)
 
