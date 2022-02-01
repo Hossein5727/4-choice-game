@@ -12,6 +12,7 @@
      url(./assets/bg.jpg) center;
      display: flex;
      flex-direction: column;
+     height: 100vh !important;
 }
 
 .top{
@@ -267,6 +268,7 @@
     .pyramid{
         margin-top: 30px;
     }
+
 
     .questions_trivia{
         width: 100%;
