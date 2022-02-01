@@ -219,6 +219,45 @@
     font-size: 35px;
 }
 
+.login_container{
+    background-color: #3355CE;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.input_login{
+    padding: 6px 12px;
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: black;
+}
+
+.btn_login{
+    padding: 8px;
+    width: 260px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: darkblue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.btn_login:hover{
+    background-color: transparent;
+}
+
 @media screen and (max-width:768px) {
     .app{
         flex-direction: column;
