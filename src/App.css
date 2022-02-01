@@ -259,6 +259,56 @@
     background-color: transparent;
 }
 
+.about_me{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about_me a{
+    font-size: 19px;
+    font-weight: 500;
+    border: 1px solid white;
+    padding: 8px;
+    transition: all 0.4s ease-in;
+    position: relative;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    z-index: 999;
+}
+
+.about_me a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.938);
+    z-index: -2;
+    transition: all 0.4s ease-in;
+}
+
+.about_me a:hover::before{
+    left: 0px;
+    display: block;
+    transition: all 0.4s ease-in;
+    color: #000 ;
+}
+
+.about_me a:hover{
+    transition: all 0.4s ease-in;
+    color: #000 !important;
+    z-index: 999 !important;
+}
+
 @media screen and (max-width:768px) {
     .app{
         flex-direction: column;

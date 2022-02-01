@@ -19,6 +19,11 @@ const LoginUser = ({ setUserName }) => {
                 placeholder='Enter Your Name'
             />
             <button className='btn_login' onClick={handleClick}>Let`s Go</button>
+
+            <div className='about_me'>
+                <a href='https://www.instagram.com/hossein_offical_/' target="_blank" >Desgin By Hossein Ghiasi</a>
+                {/* <a  rel="noreferrer">Hossein</a> */}
+            </div>
         </div>
     )
 }
